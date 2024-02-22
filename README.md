@@ -66,15 +66,16 @@ $ npm run start:prod
 4. Schemas : Usando la libería de moongose
 5. Modelos 
 6. DTOs y sus extensiones
-8. Custom Pipes : Creamos un pipe para validar que el id sea un MongoID
-9. Seed : Para generar data de prueba mediante un provider
-10. Inyección de provider : Inyectamos nuestro modelo Pokemon en SeedService para poder hacer uso de sus métodos.
-12. Importación de Módulo :  exportamos nuestro MongooseModule para poder hacer uso de los modelos.
+7. Custom Pipes : Creamos un pipe para validar que el id sea un MongoID
+8. Seed : Para generar data de prueba mediante un provider
+9. Inyección de provider : Inyectamos nuestro modelo Pokemon en SeedService para poder hacer uso de sus métodos.
+10. Importación de Módulo :  exportamos nuestro MongooseModule para poder hacer uso de los modelos.
 11. Exportación de Módulo :  exportamos nuestro MongooseModule para poder hacer uso de los modelos.
-13. Insercción de multiples registros
-14. Patron Adapter : Implementamos nuestro patrón adapter para las peticiones http con Axios
-15. Paginación : 
-7. Respaldar a Github
+12. Insercción de multiples registros
+13. Patron Adapter : Implementamos nuestro patrón adapter para las peticiones http con Axios
+14. Paginación : Uso de QueryParams y PaginationDto, y los metodos limit y skyp
+15. transform,transformOptions,enableImplicitConversion : propiedades ValidationPipe para transformar los querysParams que vienen en string a json y darle el tipo de Dto que le corresponde
+16. Respaldar a Github
 
 ## Puntos para recordar
 
