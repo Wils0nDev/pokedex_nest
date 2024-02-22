@@ -10,6 +10,10 @@ async function bootstrap() {
     new ValidationPipe({
     whitelist: true,
     forbidNonWhitelisted: true,
+    transform: true,       //*Estas dos propiedades convierte mi queryParams a Json con el tipo de los Dtos 
+    transformOptions: {
+      enableImplicitConversion:true
+    }
     })
    );
   await app.listen(3000);

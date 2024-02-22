@@ -10,9 +10,12 @@ import { Pokemon, PokemonSchema } from './entities/pokemon.entity';
 import { Model, isValidObjectId } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { Response } from 'express';
+import { PaginationDto } from 'src/common/dto/pagination-pokemon.dto';
 
 @Injectable()
 export class PokemonService {
+  private pokemons: Pokemon[] = [];
+
   constructor(
     @InjectModel(Pokemon.name)
     private readonly pokemonModel: Model<Pokemon>,
@@ -28,8 +31,12 @@ export class PokemonService {
     }
   }
 
-  findAll() {
-    return `This action returns all pokemon`;
+  async findAll(paginationDto:PaginationDto) {
+    const {offset = 0, limit = 10 } = paginationDto
+    return await this.pokemonModel.find()
+    .limit(limit)
+    .skip(offset)
+
   }
 
   async findOne(term: string) {
@@ -95,5 +102,14 @@ export class PokemonService {
     throw new InternalServerErrorException(
       `No puede actualizar el pokemon - revise el log`,
     );
+  }
+
+  async fillPokemonsWithSeedData(createPokemonDto:CreatePokemonDto[]){
+    try {
+      const pokemon = await this.pokemonModel.create(createPokemonDto);
+      return pokemon;
+    } catch (error) {
+      this.handleExceptions(error);
+    }
   }
 }

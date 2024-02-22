@@ -38,7 +38,9 @@ $ npm install
 ```
 docker-compose up -d
 ```
-3. Levantar la aplicacion en diferentes modos
+3. Reconstruir la base de datos con la semilla
+``` http://localhost:3000/api/v2/seed/ ``` 
+4. Levantar la aplicacion en diferentes modos
 ```bash
 # development
 $ npm run start
@@ -52,10 +54,31 @@ $ npm run start:prod
 ## Stack usado
 * MongoDB
 * NestJS
+* Postman
+* Docker Desktop
+
+## Temas
+
+
+1. Validaciones : Uso de class-validator y class-transformer
+2. CRUD contra base de datos : (GET, POST, PATCH, DELETE)
+3. Docker y Docker Compose : Para levantar bd MongoDB
+4. Schemas : Usando la libería de moongose
+5. Modelos 
+6. DTOs y sus extensiones
+8. Custom Pipes : Creamos un pipe para validar que el id sea un MongoID
+9. Seed : Para generar data de prueba mediante un provider
+10. Inyección de provider : Inyectamos nuestro modelo Pokemon en SeedService para poder hacer uso de sus métodos.
+12. Importación de Módulo :  exportamos nuestro MongooseModule para poder hacer uso de los modelos.
+11. Exportación de Módulo :  exportamos nuestro MongooseModule para poder hacer uso de los modelos.
+13. Insercción de multiples registros
+14. Patron Adapter : Implementamos nuestro patrón adapter para las peticiones http con Axios
+15. Paginación : 
+7. Respaldar a Github
 
 ## Puntos para recordar
 
 - setGlobalPrefix : permite definir un prefijo global con la que iinciara la ruta del endpoint
   - En el maint.ts: 
 
-    ``` app.setGlobalPrefix('api') ```
+    ``` app.setGlobalPrefix('api/v2') ```
