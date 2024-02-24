@@ -51,6 +51,17 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+
+## Librerias
+
+- class-transformer , class-validator : Para validar nuestros DTOs.
+- @nestjs/config  : Para poder configurar variables de entorno
+- @nestjs/mongoose, mongoose : Para trabajar con BD MongoDB
+- axios : Para hacer peticiones http a nuesto Api de Pokemon
+- joi :   Nos ayudara a validar nuestros variables de entorno (.env)
+
+
+
 ## Stack usado
 * MongoDB
 * NestJS
@@ -60,21 +71,28 @@ $ npm run start:prod
 ## Temas
 
 
-1. Validaciones : Uso de class-validator y class-transformer
-2. CRUD contra base de datos : (GET, POST, PATCH, DELETE)
-3. Docker y Docker Compose : Para levantar bd MongoDB
-4. Schemas : Usando la libería de moongose
-5. Modelos 
-6. DTOs y sus extensiones
-7. Custom Pipes : Creamos un pipe para validar que el id sea un MongoID
-8. Seed : Para generar data de prueba mediante un provider
+1. Validaciones : Uso de class-validator y class-transformer.
+2. CRUD contra base de datos : (GET, POST, PATCH, DELETE).
+3. Docker y Docker Compose : Para levantar bd MongoDB.
+4. Schemas : Usando la libería de moongose.
+5. Modelos .
+6. DTOs y sus extensiones.
+7. Custom Pipes : Creamos un pipe para validar que el id sea un MongoID.
+8. Seed : Para generar data de prueba mediante un provider.
 9. Inyección de provider : Inyectamos nuestro modelo Pokemon en SeedService para poder hacer uso de sus métodos.
 10. Importación de Módulo :  exportamos nuestro MongooseModule para poder hacer uso de los modelos.
 11. Exportación de Módulo :  exportamos nuestro MongooseModule para poder hacer uso de los modelos.
-12. Insercción de multiples registros
-13. Patron Adapter : Implementamos nuestro patrón adapter para las peticiones http con Axios
-14. Paginación : Uso de QueryParams y PaginationDto, y los metodos limit y skyp
-15. transform,transformOptions,enableImplicitConversion : propiedades ValidationPipe para transformar los querysParams que vienen en string a json y darle el tipo de Dto que le corresponde
+12. Insercción de multiples registros.
+13. Patron Adapter : Implementamos nuestro patrón adapter para las peticiones http con Axios.
+14. Paginación : Uso de QueryParams y PaginationDto, y los metodos limit y skyp.
+15. transform,transformOptions,enableImplicitConversion : propiedades ValidationPipe para transformar los querysParams que vienen en string a json y darle el tipo de Dto que le corresponde.
+
+16. ConfigModule : Es un módulo que importamos en el app.module, este nos permite obtener las variables de entorno configuradas en en nuestro env.config, que a su vez obtiene las variables configuradas en el .env. 
+    * load : es una propiedad de ConfigModule, que nos permite cargar nuestra configuración de variables de entorno (EnvConfiguration)
+
+17. ValidationSechema : con la librería "joi" podemos validar nuestros schema, pero en este caso lo usaremos para hacer una validación de nuestas variables de entorno. validationSchema es una propiedad mas de ConfigModule, el cual nos permite hacer uso de schemas para hacer la validación. 
+
+
 16. Respaldar a Github
 
 ## Puntos para recordar
