@@ -15,6 +15,7 @@ lerna-debug.log*
 .DS_Store
 .env
 .vscode
+.env.prod
 
 # Tests
 /coverage

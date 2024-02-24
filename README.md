@@ -68,9 +68,14 @@ $ npm run start:prod
 * Postman
 * Docker Desktop
 
+## Build de Producción
+
+1. Crear el archivo .env.prod
+2. Llenar las variables de entorno de prod
+3. Crear la nueva imagen
+```docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build ```
+
 ## Temas
-
-
 1. Validaciones : Uso de class-validator y class-transformer.
 2. CRUD contra base de datos : (GET, POST, PATCH, DELETE).
 3. Docker y Docker Compose : Para levantar bd MongoDB.
@@ -92,8 +97,9 @@ $ npm run start:prod
 
 17. ValidationSechema : con la librería "joi" podemos validar nuestros schema, pero en este caso lo usaremos para hacer una validación de nuestas variables de entorno. validationSchema es una propiedad mas de ConfigModule, el cual nos permite hacer uso de schemas para hacer la validación. 
 
+18. Docker: Docker nos sirve para crear contenedores con todo lo necesario que nuestra aplicación necesita para ser instalado en un servidor
 
-16. Respaldar a Github
+19. Respaldar a Github
 
 ## Puntos para recordar
 
