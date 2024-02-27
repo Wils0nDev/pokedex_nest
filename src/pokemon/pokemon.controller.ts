@@ -33,7 +33,7 @@ export class PokemonController {
   }
 
   @Delete(':id')
-  remove(@Param('id',ParseMongoIdPipe) id: string, res : Response) {
+  remove(@Param('id',ParseMongoIdPipe) id: string) {
     
     return this.pokemonService.remove(id)
   }
